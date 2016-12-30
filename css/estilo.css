@@ -1,0 +1,798 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css?family=Crimson+Text:600i|PT+Sans:400,700');
+body {
+    font-size: 100%;
+    font-family: 'PT sans', sans-serif;
+    font-weight: 400;
+    text-align: center;
+    color: rgb(147, 147, 147);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 1.5em;
+    color: rgb(86, 90, 86);
+    margin: 0 5%;
+    padding: 2rem;
+}
+
+h2 {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1em;
+    letter-spacing: .04em;
+    color: rgb(106, 106, 106);
+    padding: 1.3rem 5%;
+}
+
+p {
+    line-height: 1.6rem;
+    margin: 0 5%;
+    padding: 2rem 0;
+    font-size: 1em;
+    color: rgb(116, 116, 116);
+}
+
+.subtitulo {
+    font-family: "Crimson Text", serif;
+    font-weight: 600;
+    font-style: italic;
+    font-size: 1.25em;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:focus {
+    outline: 0;
+    box-shadow: none;
+}
+
+
+/*==================== Header ====================*/
+
+.cabecalho-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    height: 3.5rem;
+    background-color: rgb(255, 255, 255);
+    transition: all .4s;
+    -webkit-transition: all .4s;
+    z-index: 4;
+    box-shadow: rgba(111, 111, 111, .4) 0px 0px 5px;
+}
+
+.cabecalho-desktop {
+    display: none;
+}
+
+.logo {
+    background: url('../img/logo/logo.svg') no-repeat center center;
+    width: 6.15rem;
+    height: 1.95rem;
+    margin-left: 5vw;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+}
+
+.hamburger {
+    padding: .6rem;
+    margin-right: 4vw;
+}
+
+.hamburger .linha {
+    width: 2.2rem;
+    height: 2px;
+    background-color: rgb(80, 144, 80);
+    margin-bottom: .5rem;
+}
+
+.hamburger .linha:last-child {
+    margin-bottom: 0px;
+}
+
+.hamburger-close {
+    position: absolute;
+    padding: .6rem;
+    top: 1rem;
+    right: 4vw;
+    z-index: 8;
+}
+
+.linhaa,
+.linhab {
+    width: 2.2rem;
+    height: 2px;
+    background-color: rgb(180, 177, 177);
+}
+
+.hamburger-close .linhaa {
+    margin-top: 2px;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.hamburger-close .linhab {
+    margin-top: -2px;
+    -webkit-transform: rotate(315deg);
+    transform: rotate(315deg);
+}
+
+.menu-mobile {
+    position: fixed;
+    top: -100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgb(255, 255, 255);
+    transition: all .6s;
+    -webkit-transition: all .6s;
+    opacity: .3;
+    z-index: 7;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.menu-mobile ul {
+    padding: 0;
+    margin: 0;
+}
+
+.menu-mobile ul li {
+    height: 45px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-mobile a {
+    font-family: "Crimson Text", sans-serif;
+    font-weight: 600;
+    font-style: italic;
+    font-size: 1.5em;
+    color: rgb(69, 69, 69);
+}
+
+nav ul li a.active {
+    color: rgb(91, 167, 91);
+}
+
+
+/*======================= Diversos ======================*/
+
+#filtro {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(51, 51, 51, 0.0);
+    -webkit-transition: all .4s;
+    transition: all .4s;
+    z-index: 2;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 45px;
+    margin: 0 auto 1rem;
+    border: solid 1px rgb(80, 144, 80);
+    color: rgb(80, 144, 80);
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    font-weight: 700;
+    font-size: .9em;
+    letter-spacing: .03em;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+main section {
+    padding-top: 3rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid rgb(255, 255, 255);
+}
+
+main section:first-child {
+    padding: 0;
+}
+
+main section:last-child {
+    padding-bottom: 0;
+}
+
+main section:nth-child(2),
+main section:nth-child(4){
+    background: rgb(250, 251, 250);
+}
+
+
+/*===================== Início =======================*/
+
+#inicio {
+    background: url('../img/bg/bg2.jpg') no-repeat center center fixed;
+    background-size: 300%;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-shadow: rgba(99, 99, 99, .3) 2px 2px 3px;
+    transition: all .3s;
+    -webkit-transition: all .3s;
+    z-index: 1;
+}
+
+#fundo {   
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(80, 144, 80, .5);
+    z-index: -1;
+}
+
+#inicio h1 {    
+    color: rgb(255, 255, 255);
+    margin: 3.5rem 3% 1rem;
+    padding: 0;
+}
+
+#inicio h2 {
+    color: rgb(255, 255, 255);
+    padding: 0;
+    padding-bottom: 2rem;
+    margin: 0 5%;
+}
+
+#inicio .btn {
+    margin: 0 auto;
+    box-shadow:  rgba(111, 111, 111, .4) 1px 1px 2px;
+    background: rgba(255, 255, 255, .2);
+    border: 1px solid rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    text-shadow: none;
+}
+
+
+/*==================== Análise de materiais =======================*/
+#analises .subtitulo {
+    padding-bottom: 3rem;
+}  
+
+.container .box {
+    margin: 0 5% 1rem;
+    padding-bottom: 2.5rem;
+    background: rgb(253, 253, 253);
+    border-radius: 2px;
+    box-shadow:  rgba(111, 111, 111, .1) 0px 0px 15px;
+    transition: all .3s;
+    -webkit-transition: all .3s;
+}
+
+.container .box-img {
+    width: 100%;
+    height: 16rem;
+}
+
+.agua {
+    background: url("../img/analises/agua.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+.alimentos  {
+    background: url("../img/analises/alimentos.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+.efluentes {
+    background: url("../img/analises/efluentes.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+.solos {
+    background: url("../img/analises/solo.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+.cosmeticos {
+    background: url("../img/analises/cosmeticos.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+.container .box h2 {
+    padding: 0;
+    margin: 35px 5% 30px;
+}
+
+.container .box p {
+    padding: 0;
+}
+
+.container .box .btn {
+    margin-top: 2.5rem;
+}
+
+
+/*==================== Clientes =======================*/
+
+#clientes .subtitulo {
+    padding-bottom: 3rem;
+}
+
+#clientes ul {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    list-style: none;
+}
+
+#clientes ul li {
+    width: 50%;
+    height: 28vw;
+    margin: 0;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+}
+
+#clientes .port-box .mask {
+    display: none;
+}
+
+#clientes .port-box img {
+    width: 100%;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+}
+
+
+
+/*====================== Contato ======================*/
+
+.formulario {
+    padding-top: 3rem;
+}
+
+input,
+textarea {
+    width: 90%;
+    margin: 0 5% .7rem;
+    border: none;
+    border-radius: 1px;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    padding-left: .5rem;
+    box-sizing: border-box;
+    background: rgb(250, 251, 250);
+}
+
+input {
+    height: 3rem;
+    font-size: 1em;
+}
+
+textarea {
+    height: 10rem;
+    resize: vertical;
+    font-family: 'PT Sans', serif;
+    font-weight: 400;
+    font-size: 1.1em;
+    color: rgb(116, 116, 116);
+    padding-right: .5rem;
+    padding-top: .8rem;
+}
+
+input:focus,
+textarea:focus {
+    outline: 0;    
+    background-color: rgb(255, 255, 255);
+    box-shadow:  rgba(111, 111, 111, .2) 0px 0px 6px;
+}
+
+[placeholder] {
+    padding-left: .8rem;
+    color: rgb(116, 116, 116);
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    font-family: 'PT Sans', serif;
+    font-weight: 400;
+    font-size: 1em;
+    color: rgb(150, 150, 150);
+}
+
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+    font-family: 'PT Sans', serif;
+    font-weight: 400;
+    font-size: 1em;
+    color: rgb(150, 150, 150);
+}
+
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+    font-family: 'PT Sans', serif;
+    font-weight: 400;
+    font-size: 1em;
+    color: rgb(150, 150, 150);
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+    font-family: 'PT Sans', serif;
+    font-weight: 400;
+    font-size: 1em;
+    color: rgb(150, 150, 150);
+}
+
+#contato .btn {    
+    width: 90%;
+    height: 3rem;
+    border: none;
+    box-shadow: none;
+    background-color: rgb(80, 144, 80);
+    margin-top: 1rem;
+    color: rgb(255, 255, 255);
+}
+
+.fale-conosco {
+    margin: 0 5%;
+    padding: 2rem 0;
+}
+
+#telefone,
+#whatsapp,
+#e-mail,
+#facebook,
+#skype,
+#endereco{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0.5rem auto;
+}
+
+.icones {
+    min-width: 1rem;
+    height: 1rem;
+    margin-right: 10px;
+}
+
+.fone {
+    background: url('../img/icons/fone.svg') no-repeat center center;
+    background-size: 100%;
+}
+
+.whats {
+    background: url('../img/icons/whats.svg') no-repeat center center;
+    background-size: 100%;
+}
+
+.mail {
+    background: url('../img/icons/mail.svg') no-repeat center center;
+    background-size: 100%;
+}
+
+.face {
+    background: url('../img/icons/face.svg') no-repeat center center;
+    background-size: 100%;
+}
+
+.sky {
+    background: url('../img/icons/sky.svg') no-repeat center center;
+    background-size: 100%;
+}
+
+.local {
+    background: url('../img/icons/local.svg') no-repeat center center;
+    background-size: 100%;
+}
+
+iframe {
+    width: 100%;
+    margin-top: 3rem;
+    pointer-events: none;
+}
+
+#up {
+    background-color: rgb(80, 144, 80);
+    padding: 1rem 0;
+}
+
+.marca {
+    display: block;
+    margin: auto;
+    width: 4.5rem;
+    height: 4.2rem;
+    background: url("../img/logo/logo-vert.svg") no-repeat center center;
+    background-size: 100%;
+}
+
+#copyright {
+    background-color: rgb(73, 136, 73);
+    padding: 1rem 0;
+}
+
+#copyright p {
+    color: rgb(250, 251, 250);
+    font-size: .9em;
+    padding: 1rem 0;
+}
+
+#hype {
+    display: block;
+    margin: auto;
+    width: 6.5rem;
+    height: 1.6rem;
+    background: url("../img/icons/hypelikes.svg") no-repeat center center;
+    opacity: .1;
+}
+
+
+/*====================== Brackpoints ======================*/
+
+@media screen and (max-height: 360px) {
+    #inicio h1 {
+        font-size: 1.4em;
+        margin-top: 5rem;
+    }
+    #inicio .btn {
+        display: none;
+    }
+    .menu-mobile ul li {
+        height: 2.3rem;
+    }
+    .menu-mobile ul li a {
+        font-size: 1.2em;
+    }
+}
+
+@media screen and (min-width: 480px) {
+    #inicio h1 {
+        font-size: 2em;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    #clientes ul li {
+        width: 33.3333%;
+        height: 19vw;
+    }
+    .formulario {
+        width: 75%;
+        margin: auto;
+    }
+    iframe {
+        width: 75%;
+    }
+}
+
+@media screen and (min-width: 800px) {    
+    #inicio {
+        background-size: cover;
+    }
+    .container .box {
+        height: 70vw;
+        position: relative;
+        align-items: center;
+        width: 100%;
+        margin: 0;
+        background: rgb(255, 255, 255);
+        box-shadow: none;
+    }
+    #analises .image {        
+        width: 70%;
+        height: 100%;    
+    }    
+    .container .box-img {        
+        height: 100%;
+    }
+    #analises .left {
+        position: absolute;
+        left: 0;
+    }
+    #analises .right {
+        position: absolute;
+        right: 0;
+    }
+    #analises .text {
+        background: rgb(255, 255, 255);
+        height: 80%;
+        width: 60vw;                
+        margin-top: 7%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    
+}
+
+@media screen and (min-width: 1000px) {
+    .cabecalho-mobile {
+        display: none;
+    }
+    .cabecalho-desktop {
+        position: fixed;
+        display: flex;
+        align-items: flex-end;
+        width: 100%;
+        height: 6rem;        
+        transition: all .7s;
+        -webkit-transition: all .7s;
+        z-index: 2;
+    }
+    .logo {
+        background: url("../img/logo/logo-color.svg") no-repeat center center;
+        position: absolute;
+        bottom: 0;
+        left: 5%;
+        height: 4rem;
+        cursor: pointer;
+        transition: all .3s;
+        -webkit-transition: all .3s;
+    }
+    .menu-desktop {
+        position: absolute;
+        right: 10%;
+        bottom: 0;
+        height: 4rem;
+        display: flex;
+        align-items: center;
+    }
+    .menu-desktop ul li {
+        display: inline-block;
+        margin: 0 7px;
+    }
+    .menu-desktop a {
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: .9em;
+        color: rgb(255, 255, 255);        
+        letter-spacing: .04em;
+        transition: all .3s;
+        -webkit-transition: all .3s;
+    }
+    .fixar {
+        background: rgb(255, 255, 255);
+        height: 4rem;
+        box-shadow:  rgba(111, 111, 111, .4) 0px 0px 5px;
+    }
+    .fixar .logo {
+        background: url("../img/logo/logo.svg") no-repeat center center;
+    }
+    nav ul li a.active,
+    .fixar nav ul li a.active,
+    .menu-desktop a:hover,
+    .fixar .menu-desktop a:hover {
+        color: rgb(80, 144, 80);
+    }
+    .fixar .menu-desktop a {
+        color: rgb(116, 116, 116);
+    }    
+    p {
+        margin: 0 12%;
+    }
+    #inicio h1 {
+        font-size: 2.7em;
+    }
+    #inicio h2 {
+        font-size: 1.1em;
+    }
+    #inicio .btn:hover {
+        background: rgba(255, 255, 255, .4);
+    }
+    .btn:hover,
+    #contato .btn:hover {
+        background-color: rgb(113, 167, 113);
+        color: rgb(255, 255, 255);
+        cursor: pointer;
+    }
+    .container .box {
+        height: 60vw;
+    }
+    .box p {
+        margin: 0 5%
+    }
+    #clientes ul {
+        width: 55rem;
+        margin: auto;
+    }
+    #clientes ul li {
+        width: 16rem;
+        height: 9.5rem;
+        margin: .5rem;
+        position: relative;
+        overflow: hidden;
+    }
+    #clientes .port-box .mask {
+        background: rgba(80, 144, 80, .9);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        opacity: 0;
+        -webkit-transition: all .3s;
+        transition: all .3s;
+    }
+    #clientes .port-box .mask h2 {
+        color: rgb(255, 255, 255);
+        font-size: 1.2em;
+        padding: 0;
+    }
+    #clientes .port-box:hover .mask {
+        opacity: 1;
+        z-index: 1;
+    }
+    #clientes .port-box:hover .zoom {
+        -webkit-transform: scale(1.05, 1.05);
+        -ms-transform: scale(1.05, 1.05);
+        transform: scale(1.05, 1.05);
+        -webkit-transition: all 0.5s ease-in-out;
+        transition: all 0.3s ease-in-out;
+    }
+    .formulario {
+        width: 60%;
+    }
+    #copyright {
+        position: relative;
+    }
+    #hype {
+        position: absolute;
+        top: 2rem;
+        right: 3rem;
+        transition: all .4s;
+        -webkit-transition: all .4s;
+    }
+    #hype:hover {
+        opacity: 1;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    #analises .container {
+        width: 61.5rem;
+        margin: auto;
+    }
+    .container .box {
+        height: 40rem;
+    }
+    #analises .text {
+        width: 50%;
+    }    
+    .formulario {
+        width: 45rem;
+    }
+    iframe {
+        width: 40rem;
+    }
+}
